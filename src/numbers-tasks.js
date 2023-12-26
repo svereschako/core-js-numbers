@@ -18,9 +18,9 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-
-function getRectangleArea(width, height) {
-  return width * height;
+function getRectangleArea( width, height ) {
+  //throw new Error('Not implemented');
+  return width*height;
 }
 
 /**
@@ -34,8 +34,9 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(radius) {
-  return 2 * Math.PI * radius;
+function getCircleCircumference( radius ) {
+  //throw new Error('Not implemented');
+  return 2*Math.PI*radius;
 }
 
 /**
@@ -50,8 +51,9 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(value1, value2) {
-  return value1 / 2 + value2 / 2;
+function getAverage( value1, value2 ) {
+  //throw new Error('Not implemented');
+  return value1/2 + value2/2;
 }
 
 /**
@@ -69,8 +71,9 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+function getDistanceBetweenPoints( x1, y1, x2, y2 ) {
+  //throw new Error('Not implemented');
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 /**
@@ -85,8 +88,9 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(a, b) {
-  return -b / a;
+function getLinearEquationRoot( a, b ) {
+  //throw new Error('Not implemented');
+  return -b/a;
 }
 
 /**
@@ -106,10 +110,9 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-const vect = (x, y) => Math.sqrt(x ** 2 + y ** 2);
-function getAngleBetweenVectors(x1, y1, x2, y2) {
-  const theta = (x1 * x2 + y1 * y2) / (vect(x1, y1) * vect(x2, y2));
-  return Math.acos(theta);
+function getAngleBetweenVectors( x1, y1, x2, y2 ) {
+  //throw new Error('Not implemented');
+  return Math.abs(Math.atan2(y2, x2) - Math.atan2(y1, x1));
 }
 
 /**
@@ -125,8 +128,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(value) {
-  return value % 10;
+function getLastDigit( value ) {
+  //throw new Error('Not implemented');
+  return value%10;
 }
 
 /**
@@ -140,8 +144,9 @@ function getLastDigit(value) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(value) {
-  return value.toString();
+function parseNumberFromString( value ) {
+  //throw new Error('Not implemented');
+  return Number(value);
 }
 
 /**
@@ -157,8 +162,9 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(a, b, c) {
-  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+function getParallelepipedDiagonal( a, b, c ) {
+  //throw new Error('Not implemented');
+  return Math.sqrt(a**2 + b**2 + c**2);
 }
 
 /**
@@ -178,16 +184,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-
-// @TODO optimisation
-function roundToPowerOfTen(num, pow) {
-  const numberAsString = num.toString();
-  const placeForDot = numberAsString.length - pow;
-  const partBeforeDot = numberAsString.slice(0, placeForDot);
-  const partAfterDot = numberAsString.slice(placeForDot);
-  const float = `${partBeforeDot}.${partAfterDot}`;
-  const rounded = Math.round(Number(float));
-  return Number(rounded + '0'.repeat(partAfterDot.length));
+function roundToPowerOfTen( num, pow ) {
+  //throw new Error('Not implemented');
+  return Math.round(num/Math.pow(10, pow))*Math.pow(10, pow);
 }
 
 /**
@@ -207,14 +206,12 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-
-function isPrime(n) {
-  let count = 0;
-  for (let i = 1; i < n; i += 1) {
-    if (count > 1) return false;
-    if (n % i === 0) count += 1;
+function isPrime( n ) {
+  //throw new Error('Not implemented');
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) { return false; }
   }
-  return true;
+  return n > 1;
 }
 
 /**
@@ -232,11 +229,12 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(value, def) {
-  if (Number(value)) {
-    return value;
-  }
-  return def;
+function toNumber( value, def ) {
+  //throw new Error('Not implemented');
+  let res = Number(value);
+  if(isNaN(res))
+    return def;
+  return res;
 }
 
 /**
@@ -250,8 +248,9 @@ function toNumber(value, def) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(num) {
-  return num ** 3;
+function getCube( num ) {
+  //throw new Error('Not implemented');
+  return num**3;
 }
 
 /**
@@ -267,13 +266,18 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-
-function getFibonacciNumber(index) {
-  if (index === 0) return 0;
-  if (index === 1) return 1;
-  return getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
+function getFibonacciNumber( index ) {
+  //throw new Error('Not implemented');
+  let pprev = 0;
+  let prev = 0;
+  let fnum = 0;
+  for(let i=0;i<=index;i++){
+    fnum = i==1 ? 1 : pprev + prev;
+    pprev = prev;
+    prev = fnum;
+  }
+  return fnum;
 }
-
 /**
  * Returns the sum of all numbers from 1 to n.
  *
@@ -285,9 +289,13 @@ function getFibonacciNumber(index) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(n) {
-  if (n === 1) return 1;
-  return n + getSumToN(n - 1);
+function getSumToN( n ) {
+  //throw new Error('Not implemented');
+  let res = 0;
+  for(let i=0;i<=n;i++){
+    res += i;
+  }
+  return res;
 }
 
 /**
@@ -301,10 +309,12 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-
-function getSumOfDigits(num) {
-  const numberAsArray = num.toString().split('');
-  return numberAsArray.reduce((acc, char) => acc + Number(char), 0);
+function getSumOfDigits( num ) {
+  //throw new Error('Not implemented');
+  const arr = String(num).split("");
+  let res = 0;
+  arr.forEach(el => res += Number(el));
+  return res;
 }
 
 /**
@@ -318,13 +328,10 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-
-function getBaseLog(x, y) {
-  return Math.log(y) / Math.log(x);
-}
-
-function isPowerOfTwo(num) {
-  if (Number.isInteger(getBaseLog(2, num))) return true;
+function isPowerOfTwo( num ) {
+  //throw new Error('Not implemented');
+  if(Number.isInteger(Math.log2(num)))
+    return true;
   return false;
 }
 
@@ -338,7 +345,8 @@ function isPowerOfTwo(num) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(num) {
+function getSine( num ) {
+  //throw new Error('Not implemented');
   return Math.sin(num);
 }
 
@@ -353,9 +361,9 @@ function getSine(num) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-
-function numberToStringInBase(number, base) {
-  return number.toString(base);
+function numberToStringInBase( number, base ) {
+  //throw new Error('Not implemented');
+  return Number(number).toString(base);
 }
 
 /**
@@ -368,8 +376,9 @@ function numberToStringInBase(number, base) {
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-function toExponential(number, fractionDigits) {
-  return number.toExponential(fractionDigits);
+function toExponential( number, fractionDigits ) {
+  //throw new Error('Not implemented');
+  return Number(number).toExponential(fractionDigits);
 }
 
 /**
@@ -383,8 +392,9 @@ function toExponential(number, fractionDigits) {
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-function toFixed(number, fractionDigits) {
-  return number.toFixed(fractionDigits);
+function toFixed( number, fractionDigits ) {
+  //throw new Error('Not implemented');
+  return Number(number).toFixed(fractionDigits);
 }
 
 /**
@@ -399,8 +409,9 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(number, precision) {
-  return number.toPrecision(precision);
+function toPrecision( number, precision ) {
+  //throw new Error('Not implemented');
+  return Number(number).toPrecision(precision);
 }
 
 /**
@@ -413,7 +424,8 @@ function toPrecision(number, precision) {
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-function getNumberValue(number) {
+function getNumberValue( number ) {
+  //throw new Error('Not implemented');
   return number.valueOf();
 }
 
@@ -432,11 +444,9 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(num) {
-  if (Number.isFinite(num) && !Number.isNaN(num) && typeof num === 'number') {
-    return true;
-  }
-  return false;
+function isNumber( number ) {
+  //throw new Error('Not implemented');
+  return Number.isFinite(number);    
 }
 
 /**
@@ -450,7 +460,8 @@ function isNumber(num) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(number) {
+function isInteger( number ) {
+  //throw new Error('Not implemented');
   return Number.isInteger(number);
 }
 
@@ -464,7 +475,8 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(str) {
+function getFloatOnString( str ) {
+  //throw new Error('Not implemented');
   return Number.parseFloat(str);
 }
 
@@ -482,8 +494,8 @@ function getFloatOnString(str) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-
-function getIntegerOnString(str, base) {
+function getIntegerOnString( str, base ) {
+  //throw new Error('Not implemented');
   return Number.parseInt(str, base);
 }
 
@@ -498,7 +510,8 @@ function getIntegerOnString(str, base) {
  * 3.5      => false
  * 2 ** 53  => false
  */
-function isSafeInteger(number) {
+function isSafeInteger( number ) {
+  //throw new Error('Not implemented');
   return Number.isSafeInteger(number);
 }
 
@@ -512,8 +525,9 @@ function isSafeInteger(number) {
  * 5.9  => 5
  * -5.1 => -6
  */
-function roundToSmallestInteger(num) {
-  return Math.floor(num);
+function roundToSmallestInteger( number ) {
+  //throw new Error('Not implemented');
+  return Math.floor(number);
 }
 
 /**
@@ -526,8 +540,9 @@ function roundToSmallestInteger(num) {
  * 5.1  => 6
  * -5.9 => -5
  */
-function roundToLargestInteger(num) {
-  return Math.ceil(num);
+function roundToLargestInteger( number ) {
+  //throw new Error('Not implemented');
+  return Math.ceil(number);
 }
 
 /**
@@ -541,8 +556,9 @@ function roundToLargestInteger(num) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function roundToNearestInteger(num) {
-  return Math.round(num);
+function roundToNearestInteger( number ) {
+  //throw new Error('Not implemented');
+  return Math.round(number);
 }
 
 /**
@@ -556,8 +572,9 @@ function roundToNearestInteger(num) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(num) {
-  return Math.trunc(num);
+function getIntegerPartNumber( number ) {
+  //throw new Error('Not implemented');
+  return Math.trunc(number);
 }
 
 /**
@@ -572,9 +589,12 @@ function getIntegerPartNumber(num) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(x1, x2, x3) {
-  const sum = x1 + x2 + x3;
-  return sum.toFixed(1);
+function getSumOfNumbers( x1, x2, x3 ) {
+  //throw new Error('Not implemented');
+  let res = x1 + x2 + x3;
+  if(!Number.isInteger(res))
+    return +res.toFixed(1);
+  return res;
 }
 
 /**
@@ -589,8 +609,9 @@ function getSumOfNumbers(x1, x2, x3) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(num1, num2) {
-  return Math.max(num1, num2);
+function getMaxNumber( firstNumber, secondNumber ) {
+  //throw new Error('Not implemented');
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -605,7 +626,8 @@ function getMaxNumber(num1, num2) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(min, max) {
+function getRandomInteger( min, max ) {
+  //throw new Error('Not implemented');
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -619,8 +641,9 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(cat1, cat2) {
-  return Math.hypot(cat1, cat2);
+function getHypotenuse( a, b ) {
+  //throw new Error('Not implemented');
+  return Math.hypot(a, b);
 }
 
 /**
@@ -636,11 +659,13 @@ function getHypotenuse(cat1, cat2) {
  * 10 => 5
  * 15 => 8
  */
-
-function getCountOfOddNumbers(num) {
+function getCountOfOddNumbers( number ) {
+  //throw new Error('Not implemented');
+  let num = Math.abs(number);
   let count = 0;
-  for (let i = 1; i <= Math.abs(num); i += 1) {
-    if (i % 2 !== 0) count += 1;
+  for(let i=0;i<=num;i++) {
+    if(i%2 != 0)
+      count++;
   }
   return count;
 }
